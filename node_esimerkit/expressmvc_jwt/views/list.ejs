@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1><%= title %></h1>
+    <ul>
+        <% list.forEach(function(i) { %>
+            <li>
+                <%= i.nimi %> - <%= i.email %>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Kommentoi kohdat joissa esiintyy sellaista Typescriptin syntaksia jota ei ole Javascriptissä.
+
+Kommentoi kohdat joissa esiintyvät seuraavat Angularin peruspiirteet ja selitä niiden tarkoitus:
+
+  a) data binding (numeroi kommentteihin eri tyypit), OK
+  b) direktiivi, OK
+  c) reititys, OK
+  d) service, OK
+  e) filtteri eli pipe, OK
+  f) observable ja reaktiivisuus, OK
+  g) HttpClient,
+  h) in-memory Web API.
+
+  Selitä millä mekanismilla tapahtuu
+  kommunikaatio sovelluksen ja
+   in-memory Web-APIn välillä?

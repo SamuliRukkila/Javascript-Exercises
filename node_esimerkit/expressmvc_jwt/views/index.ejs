@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <p>Tässä demotaan reittien autentikaatiota ja authorisaatiota JWT-tokenin avulla.<br />
+    Tietojen lähetysreitti (post) on suojattu ja vaatii tokenin jotta tietoja voi lähettää.<br />
+    Sovelluksessa ei ole muuta käyttöliittymää kuin tietojen listaus. Käyttö tapahtuu Postmanilla</p>
+
+    <p>1) Kokeile ensin lähettää uusi ilmoittautuminen Postmanilla osoitteeseen http://localhost:3000/ilmot/.<br />
+    Pitäisi tulla ilmoitus että tokenia ei ole.</p>
+
+    <p>2) Lähetä sitten Postmanilla username:tunnus ja password:salasana jotka olet tallentanut kannan users<br />
+    -tauluun osoitteeseen http://localhost:3000/ilmot/auth. Saat responsen mukana tokenin.</p>
+
+    <p>3) Kopioi token ja toista kohta 1) siten että lisäksi laitat Postmanin headeriin key-value -parin:<br />
+    x-access-token : tokenin merkkijono. Nyt pitäisi postauksen onnistua.<p>
+    <p><a href="ilmot/ilmot/list">listaan</a></p>
+  </body>
+</html>

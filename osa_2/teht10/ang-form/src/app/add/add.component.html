@@ -1,0 +1,58 @@
+<!-- Bootstrapilla ja Angularilla tehty template-driven form.  -->
+
+<!-- Kertoo, että kaikki divin sisällä on yhtä form-grouppia -->
+<div class='form-group container-fluid mb-5'>
+  <!-- Mitä tehdään kun submit-tyyppistä nappia painetaan. Samalla viedään
+  parameterina formin kaikki value-tiedot. Tehdään formista myös reference
+  variable.-->
+  <form (ngSubmit)='onSubmit(regForm.value)' #regForm='ngForm' novalidate>
+
+    <!-- Tyyli formin otsikolle -->
+    <h4 class='text-muted'>Ilmoittautumislomake</h4>
+      <br>
+
+      <!-- Nimi ja Email on 'required' tyyppiä, eli submittia ei voida painaa
+      ellei näihin olla liitetty jotain. Ne ovat osa NgModelia.-->
+      <div class='form-group'>
+        <label>Nimi:</label>
+        <input ngModel required type='text'
+          name='name' class='form-control'>
+      </div>
+
+      <div class='form-group'>
+        <label>Email:</label>
+        <input ngModel required type='email'
+          name='email' class='form-control'>
+      </div>
+
+      <!-- Tuodaan taulukko, jossa loopin avulla käydään läpi jokainen alkio.
+      Ensimmäinen vaihtoehto on disabled. -->
+      <div class='form-group'>
+        <label>Ruokavalinta:</label>
+        <select class='form-control' name='food' ngModel required>
+          <option disabled></option>
+          <option *ngFor='let food of foods'> {{ food }}</option>
+        </select>
+      </div>
+
+      <!-- Checkbox-tyyppinen input, jossa katsotaan vain klikkaakko käyttäjä
+      boxia. Komponentin logiikassa muutetaan condition kirjamiksi
+      TRUE = "joo" | FALSE = "ei" -->
+      <div class='form-group'>
+        <div class='form-check'>
+          <input ngModel name='sauna' class='form-check-input'
+            id='sauna' type='checkbox'>
+          <label class='form-check-label' for='sauna'>
+            Osallistun saunailtaan
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit-nappula, jonka avulla lähetetään formi. Pysyy disabled
+      -muodossa niin kauan kunnes form on validi (tarvittavat kohdat
+      täytetty). -->
+      <button type='submit' class='btn btn-success'
+        [disabled]='!regForm.form.valid'>Lähetä</button>
+
+  </form>
+</div>

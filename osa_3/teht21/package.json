@@ -1,0 +1,11 @@
+{
+  "name": "SocketIOExervise",
+  "version": "0.0.1",
+  "description": "First socket exercise for the course",
+  "dependencies": {
+    "moniker": "latest",
+    "nodemon": "^1.18.7",
+    "socket.io": "latest"
+  },
+  "author": "Samuli Rukkila"
+}

@@ -1,0 +1,18 @@
+
+<!-- Angular teemoilla tehty navbar -->
+
+<nav mat-tab-nav-bar>
+
+  <a mat-tab-link routerLink = '/me'
+     routerLinkActive #homeTab="routerLinkActive"
+     [active]="homeTab.isActive">Minä</a>
+
+  <a mat-tab-link routerLink = '/studies'
+     routerLinkActive #studiesTab="routerLinkActive"
+     [active]="studiesTab.isActive">Opintoni</a>
+
+  <a mat-tab-link routerLink = '/hobbies'
+     routerLinkActive #hobbiesTab="routerLinkActive"
+     [active]="hobbiesTab.isActive">Harrastukseni</a>
+     
+</nav>

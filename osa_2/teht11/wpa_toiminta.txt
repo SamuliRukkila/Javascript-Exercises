@@ -1,0 +1,28 @@
+|===============|
+| PWA:n aloitus |
+|===============|
+
+PWA-sovelluksen tuki aloitetaan lisäämällä Angularin oma PWA-kirjasto
+projektiin, joka luo samalla service-worker -paketit. Se myös samalla
+päivittää index.html -sivustoa, johon lisätään manifest.json -linkki.
+Servicen mukana tulee myös ngsw-config.json -tiedosto, joka on Service
+Workerin conffitiedosto.
+
+Kun Angularin projekti rakennetaan tuotantoon, (ng build --prod) rakentuu
+uusi 'Dist' -kansio .
+
+PWA:n luoma service-worker -tiedosto menee projektin ja yhteyden väliin,
+jossa se tallentaa valitut tiedostot väliaikaiseen muistiin. Tämän
+avulla sivusto toimii myös internet-yhteyttä.
+
+PWA:n takia Angular-projektin pitää olla production-tilassa, jotta se voisi
+toimia. Tämän lisäksi tarvitset staattisen HTTPS-yhteyden.
+
+|===================================|
+| Miten teht 11 PWA-sovellus toimii |
+|===================================|
+
+Kun PWA-sovellus on HTTPS-yhteydellisessä webissä, ottaa sovellus serverin
+dataa välimuistiin. Service workerit keskustelevat selaimen cachen kanssa. Jos
+web-yhteys katkeaa, otetaan sovellukseen tietoa cachesta, joten kokoaikaista
+web-yhteyttä ei tarvita.

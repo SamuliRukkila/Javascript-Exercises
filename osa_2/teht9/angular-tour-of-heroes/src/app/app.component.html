@@ -1,0 +1,16 @@
+<!-- Sisältää templaten asioista, mitä näytetään selaimessa.
+ESIM: {{title}} tulee app -komponentin omasta koodista
+ESIM: <app-heroes> tulee heroes.component.ts -tiedostosta
+
+Koska App on root-komponentti, siirtyvät nämä tiedot tämän kautta:
+app.component.html => app.component.ts => app.module.ts => ../index.html -->
+
+<!-- A.1) INTERPOLATION BINDING || YKSISUUNTAINEN LÄHTÖPAIKASTA KOHTEESEEN
+Kun halutaan tuoda komponentissa olevan ominaisuuden arvon HTML -templaattiin.  -->
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink='/dashboard'>Dashboard</a>
+  <a routerLink='/heroes'>Heroes</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>

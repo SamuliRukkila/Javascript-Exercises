@@ -1,0 +1,23 @@
+<!-- HTML-templaatti, joka sisältää heron-yksityiskohdat. Täältä on mahdollista
+myös muuttaa heron nimeä sekä poistaa hero. Toimii Heroes -templaatin kanssa. -->
+
+<!-- B) DIREKTIIVI || If-lause, joka suoritetaan jos hero on true. -->
+<div *ngIf='hero'>
+
+  <!-- E) FILTER/PIPE
+  yksi tapa filtteröidä tietoa. Tässä tapauksessa heron nimi muutetaan isoiksi
+  kirjaimiksi ennenkuin se näytetään käyttäjälle. -->
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ hero.id }}</div>
+  <div>
+    <label>name:
+      <!-- A.2) TWO-WAY DATA BINDING || KAKSISUUNTAINEN
+        Kun halutaan automatisoida data. Esim. tässä tilanteessa kun käyttäjä
+        antaa sankarille uutta nimeä. Uusi nimi palautetaan välittömästi takaisin
+        käyttäjän näkyville. -->
+      <input [(ngModel)]='hero.name' placeholder='name'>
+    </label>
+  </div>
+  <button (click)='goBack()'>Go back</button>
+  <button (click)='save()'>Save</button>
+</div>

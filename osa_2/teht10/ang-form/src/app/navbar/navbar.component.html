@@ -1,0 +1,40 @@
+<!-- Navigointipalkki, sisältää Bootstrap -teemaisen asettelun -->
+
+<nav class='navbar navbar-dark bg-dark mb-5'>
+  <a class='navbar-brand' routerLink='/list'>Ilmoittautumislomake</a>
+  <div class='navbar-expand ml-auto navbar-nav'>
+    <div class='navbar-nav'>
+
+      <a class='nav-item nav-link'
+        routerLinkActive='active'
+        routerLink='/list'>
+        <i class='fa fa-address-book'></i>
+         Ilmoittautuneet
+      </a>
+
+      <a class='nav-item nav-link'
+        routerLinkActive='active'
+        routerLink='/add'>
+        <i class='fa fa-plus-square'></i>
+         Ilmoittautumislomake
+      </a>
+
+      <a class='nav-item nav-link'
+        routerLinkActive='active'
+        routerLink='/login'>
+        <!-- Jos käyttäjä ei ole kirjautunut sisään. -->
+        <div *ngIf='!logstate'>
+         <i class='fa fa-user-circle'></i>
+          Kirjaudu sisään
+        </div>
+        <!-- Jos käyttäjä on kirjautunut sisään. Samalla kutsutaan komponentin
+        metodia logOut(), mikä kirjaa käyttäjän ulos. -->
+        <div (click)='logOut()' *ngIf='logstate'>
+          <i class='fa fa-user-times'></i>
+          Kirjaudu ulos
+        </div>
+      </a>
+
+    </div>
+  </div>
+</nav>

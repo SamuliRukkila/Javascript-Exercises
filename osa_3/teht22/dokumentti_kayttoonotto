@@ -1,0 +1,27 @@
+Dokumentti pilvipalvelun käyttöönotosta
+---------------------------------------
+
+Aloitin tehtävän tutkimalla hetken Heroku-pilvipalvelualustaa. Ennen kuitenkin
+tein mLabin-konfiguraation kuntoon (pilvipalvelu verkossa oleville mongodb-
+tietokannoille). Aloitin tekemällä mLabiin uudet tunnukset. Ja niitten avulla
+uuden tietokannan. Tämän jälkeen lisäsin uuden käyttäjän juuri sille tietokannalle
+sekä 2 collectionia: dummy-opiskelijat sekä users, jotka käyttävät pilvipalvelussa
+olevaa REST-APIa.
+
+mLabin tietokannan mukana sain yhteyden muodostamiseen tarvitseman URLin. Tein
+kopion localhost -tehtävästä ja vaihdoin Mongoose-kirjaston avulla MongoDB:n
+yhteys-kohtaan tämän kyseisen URLin. Käyttäjätietoja ei tietenkään ole suositeltavaa
+kovakoodata koodiin joten tein hakemiston sisäisen ympäristömuuttujan (process.env).
+Tämän jälkeen kokeilin yhteyttä käynnistämällä koko express-projektin, ja console.logilla
+sain tiedon, että yhteys on muodostettu. Kokeilin vielä Postman-sovelluksella erilaisia
+HTTP-pyyntöjä ollakseni varma, jotta yhteys toimii.
+
+Heroku toimii gitin tavoin samallalailla. Kirjauduin konsolissa herokuun sekä tein uuden apin.
+Kun apin tekee hakemistossa, johon on luotu .git-hakemisto, intregroi uusi app itsensä
+suoraan tähän kyseiseen repoon. Lisäsin sekä commitoin jokaisen tiedoston valmiiksi Herokua varten
+ja lopuksi puskin kaikki tiedostot Herokuun konsolin avulla.
+
+Lopuksi avasin tekemäni applikaation netissä (heroku open -> teht22-cloud.herokuapp.com), jossa
+näin root / -hakemistoon tekemäni tervehdys-viestin. Vain opiskelijoiden haku sekä login toimi
+ilman JSON Web tokenia - kaikkiin muihin tarvitsit kirjautumisen. Lopuksi kokeilin applikaatiota
+Postmanin avulla.

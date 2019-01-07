@@ -1,0 +1,77 @@
+{
+  "configVersion": 1,
+  "index": "/~wsk3/angkotisivu/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/~wsk3/angkotisivu/favicon.ico",
+        "/~wsk3/angkotisivu/index.html",
+        "/~wsk3/angkotisivu/main.19abe91599de2f1f6c0f.js",
+        "/~wsk3/angkotisivu/polyfills.38cfeb63b91a963d9fbf.js",
+        "/~wsk3/angkotisivu/runtime.ec2944dd8b20ec099bf3.js",
+        "/~wsk3/angkotisivu/styles.3d6dbb7059b279fbafc2.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/~wsk3/angkotisivu/assets/icons/icon-128x128.png",
+        "/~wsk3/angkotisivu/assets/icons/icon-144x144.png",
+        "/~wsk3/angkotisivu/assets/icons/icon-152x152.png",
+        "/~wsk3/angkotisivu/assets/icons/icon-192x192.png",
+        "/~wsk3/angkotisivu/assets/icons/icon-384x384.png",
+        "/~wsk3/angkotisivu/assets/icons/icon-512x512.png",
+        "/~wsk3/angkotisivu/assets/icons/icon-72x72.png",
+        "/~wsk3/angkotisivu/assets/icons/icon-96x96.png",
+        "/~wsk3/angkotisivu/assets/img/hobbies.png",
+        "/~wsk3/angkotisivu/assets/img/me.png",
+        "/~wsk3/angkotisivu/assets/img/studies.gif"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/~wsk3/angkotisivu/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/~wsk3/angkotisivu/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/~wsk3/angkotisivu/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/~wsk3/angkotisivu/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/~wsk3/angkotisivu/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/~wsk3/angkotisivu/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/~wsk3/angkotisivu/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/~wsk3/angkotisivu/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/~wsk3/angkotisivu/assets/img/hobbies.png": "fd024c5aabaf9ba33ad3c959238a0480c29d4c1b",
+    "/~wsk3/angkotisivu/assets/img/me.png": "bd5bdeb0cc37c84c19140696fab6219a114001f7",
+    "/~wsk3/angkotisivu/assets/img/studies.gif": "041ea0f1889fae1786212741385054d13f7a2263",
+    "/~wsk3/angkotisivu/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/~wsk3/angkotisivu/index.html": "2072703560fd6a366ab830d15d6feea8bc63cdd1",
+    "/~wsk3/angkotisivu/main.19abe91599de2f1f6c0f.js": "73352dc287b9335fb70255ca26d79e95e7d0ee58",
+    "/~wsk3/angkotisivu/polyfills.38cfeb63b91a963d9fbf.js": "ef2035f0504b4f77eac510c33595c81a5d09e33f",
+    "/~wsk3/angkotisivu/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "/~wsk3/angkotisivu/styles.3d6dbb7059b279fbafc2.css": "1406a57ce60994de2b9553fc4a1701c53ff892ca"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

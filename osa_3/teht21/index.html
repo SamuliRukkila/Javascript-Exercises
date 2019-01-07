@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='fi'>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+      * { font-family: Arial, Helvetica; }
+      #left { width: 50%; float: left; }
+      #right { float: right; width: 35%; height: 500px; }
+      #welcome { color: red; font-style: italic; }
+      #users { color: green; }
+    </style>
+    <title>Numeron Arvauspeli</title>
+    <script src='/socket.io/socket.io.js'></script>
+    <script>
+
+      // Muuttuja io.connect -funktiosta
+      const socket = io.connect('http://localhost:3004');
+
+      // Joka kerta kun uusi käyttäjä saapuu tulee serveriltä viesti siitä.
+      // Tämä funktio lisää käyttäjän käyttäjä-listaan.
+      socket.on('users', users => {
+        document.getElementById('users').innerHTML = users;
+      });
+
+      // Kun serveri on tarkastanut käyttäjän numeron tulostetaan se sekä
+      // asianmukainen teksti sivulle. (Vanhat viestit tulevat perään.)
+      socket.on('feedback', feedback => {
+        document.getElementById('guesses').innerHTML =
+          '<br>' + feedback + document.getElementById('guesses').innerHTML;
+      });
+
+      // Joka kerta kun käyttäjä arvaa uuden numeron, lähetetään siitä viesti
+      // serverille, joka tarkastaa numeron.
+      function sendGuess () {
+        let guess = document.getElementById('guess_input').value;
+        socket.emit('send_guess', guess);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='left'>
+      <h2>Numeron Arvauspeli</h2>
+        <hr>
+          <p>Arvaa numero 1-100 väliltä..</p>
+          <input type='text' id='guess_input'>
+        <button onclick='sendGuess()'>Arvaa numero</button><hr>
+      <div id='guesses'></div>
+    </div>
+
+    <div id='right'>
+      <h2>Pelaajat</h2>
+        <hr>
+      <div id='users'></div>
+    </div>
+  </body>
+
+</html>

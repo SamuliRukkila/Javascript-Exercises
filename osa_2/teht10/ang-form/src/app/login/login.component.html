@@ -1,0 +1,62 @@
+<!-- Angularin kirjaudu sisään - form. Jos kummatkin kentät ovat tyhjiä submittia
+ei voida tehdä. Form -tagissa kerrotaan, että kun submittia painaa, mennään sen
+mukaiseen metodiin. Tehdään myös reference-variable formista, mitä käytetään
+submit -elementissä. Jos form (loginForm) ei ole validi, submittia ei voida painaa. -->
+
+<!-- Tyylittäminen hoidettu Bootstrapilla -->
+<!-- Näkyvät luokat ovat Boostrapin luokkia, mitkä kertovat miten ne esitetään. -->
+<div class='form-group container-fluid mb-5'>
+  <form (ngSubmit)='onSubmit(loginForm.value)' #loginForm='ngForm' novalidate>
+
+    <!-- Käyttäjätunnus input-field -->
+    <div class='form-group'>
+      <label>Käyttäjätunnus</label>
+      <input type='text' name='username' class='form-control'
+        ngModel required #username='ngModel'>
+    </div>
+
+    <!-- Virheviesti, jos meinaa jättää user-inputin tyhjäksi -->
+    <small *ngIf='username.touched'>
+      <span *ngIf='loginForm.form.hasError("required", "username")'
+        class='alert alert-warning input-group-text'>
+          Käyttäjätunnus on pakollinen.
+      </span>
+    </small>
+
+    <!-- Salasanan input-field -->
+    <div class='form-group'>
+      <label>Salasana</label>
+      <input type='password' name='password' #password='ngModel'
+        class='form-control' ngModel required>
+    </div>
+
+    <!-- Virheviesti, jos meinaa jättää password-inputin tyhjäksi -->
+    <span *ngIf='password.touched'>
+      <small *ngIf='loginForm.form.hasError("required", "password")'
+        class='alert alert-warning input-group-text'>
+          Salasana on pakollinen.
+      </small>
+    </span>
+
+    <!-- Submit-nappula (jos form validi) -->
+    <button type='submit' class='btn btn-success'
+      [disabled]='!loginForm.form.valid'>Kirjaudu sisään</button>
+
+  </form>
+</div>
+
+<!-- Käyttäjä antaa oikeat tunnarit -->
+<div *ngIf='loginSuccess'>
+  <div class='alert alert-success'>
+    <i class='fa fa-spinner fa-pulse fa-1.7x fa-fw margin-bottom'></i>
+      {{ loginSuccess }}
+  </div>
+</div>
+
+<!-- Käyttäjä antaa väärät tunnarit. -->
+<div *ngIf='loginFailed' [hidden]='loginSuccess'>
+  <div class='alert alert-danger'>
+    <i class='fa fa-exclamation-circle'></i>
+      {{ loginFailed }}
+  </div>
+</div>

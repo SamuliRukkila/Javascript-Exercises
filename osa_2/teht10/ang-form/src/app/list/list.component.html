@@ -1,0 +1,30 @@
+<!-- Taulu, joka sisältää kaikki rekisteröityneet, käytetään *ngFor -direktiiviä
+jolla käydään taulukon kaikki alkiot (JSON-oliot) läpi. Numerointiin käytetään
+indexiä. -->
+
+<!-- Tyylittely tehty Bootstrapilla -->
+
+<div class='table-responsive'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th scope='col'>#</th>
+        <th scope='col'>Nimi</th>
+        <th scope='col'>Email</th>
+        <th scope='col'>Ruoka</th>  
+        <th scope='col   '>Sauna</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Paikallinen muuttuja 'index' pitää sisällään numeroa senhetkisestä
+      kierroksesta. -->
+      <tr *ngFor='let reg of regs; let i = index'>
+        <th scope='row'>{{ i + 1 }}</th>
+        <td>{{ reg.name }}</td>
+        <td>{{ reg.email }}</td>
+        <td>{{ reg.food }}</td>
+        <td>{{ reg.sauna }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,15 @@
+// Global Styles
+
+// Import Angular material -theme for navbar-component
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* { font-family: Arial, Helvetica, Verdana }
+html { height: 100% }
+body {
+  margin: 0;
+  background-color: #e9f7eb;
+    img {
+      margin-top: 40px;
+      margin-left: 50px
+    }
+}

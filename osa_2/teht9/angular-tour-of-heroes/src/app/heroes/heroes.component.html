@@ -1,0 +1,29 @@
+<!-- Komponentin Heroes -templaattitiedosto. Sisältää mahdollisuuden lisätä
+uusi Hero taulukkoon. Templaatti sisältää myös mahdollisuuden poistaa Heron taulukosta -->
+
+<h2>My Heroes</h2>
+
+<div>
+  <label>Hero name:
+    <input #heroName>
+  </label>
+  <!-- (click) vie input-arvon add()-metodiin ja tyhjentää inputin -->
+  <button (click)='add(heroName.value); heroName.value=""'>
+    Add
+  </button>
+</div>
+
+<ul class='heroes'>
+  <!-- A.3) CLICK EVENT BINDING/EVENT HANDLER || YKSISUUNTAINEN KOHTEESTA SOURCEEN
+        Kun jotain tiettyä tietoa lähetetään takaisin ohjelmalle. -->
+
+  <!-- B) DIREKTIIVI || Tekee väliaikaisen muuttujan, joka pyörii koko heroes
+          -taulukon lävitse. -->
+  <li *ngFor='let hero of heroes'>
+    <a routerLink='/detail/{{hero.id}}'>
+      <span class='badge'>{{ hero.id }}</span> {{ hero.name }}
+    </a>
+    <button class='delete' title='delete hero'
+      (click)='delete(hero)'>x</button>
+  </li>
+</ul>

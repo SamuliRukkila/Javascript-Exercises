@@ -1,0 +1,11 @@
+<!-- Root-komponentin näkymä. Tänne lisätään (yleisesti) muut komponentit,
+joita käyttäjien halutaan näkevän. -->
+
+<!-- Navigointipalkki -->
+<app-navbar></app-navbar>
+<!-- Bootstrap -container. Sisältää myös kaikki Routerin SPA -sivut -->
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>
+<!-- Nimensä mukainen footer -->
+<app-footer></app-footer>
